@@ -30,6 +30,7 @@
           <li><a href="#payments">Payments</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <button type="button" class="language-toggle" id="language-toggle" aria-label="Cambiar idioma a español">ES</button>
         <a href="#contact" class="btn btn--outline-white">Contact Us</a>
         <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -180,7 +181,7 @@
   </section>
 
   <!-- Press -->
-  <section class="press-bar" id="testimonials">
+  <section class="press-bar" id="press">
     <div class="container">
       <p class="press-bar__title">Trusted By Industry</p>
       <div class="press-bar__logos">
@@ -295,7 +296,7 @@
   </section>
 
   <!-- For farmers / merchants -->
-  <section class="audience">
+  <section class="audience" id="audience">
     <div class="container audience__grid">
       <div class="audience__col">
         <p class="audience__label">For Farmers</p>
@@ -416,6 +417,30 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container testimonials__layout">
+      <div class="testimonial__portrait">
+        <img id="testimonial-image" src="https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/f11b7.png" alt="Farmer sharing their experience with Muyu" />
+      </div>
+      <div class="testimonial__content" aria-live="polite">
+        <blockquote id="testimonial-quote">“We improve the interaction between the merchant and the farmer. Thanks to the app, I gained a valuable tool for working safely and reliably, with the confidence to build a long-term business relationship.”</blockquote>
+        <h3 id="testimonial-name">Carlos Estrada</h3>
+        <p id="testimonial-role">20 years of experience</p>
+        <div class="testimonial__controls">
+          <button type="button" class="testimonial-arrow" id="testimonial-prev" aria-label="Previous testimonial">←</button>
+          <button type="button" class="testimonial-arrow" id="testimonial-next" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+      <div class="testimonial__people" id="testimonial-people" aria-label="Choose a testimonial">
+        <button type="button" class="testimonial-person testimonial-person--active" data-testimonial="0"><span>CE</span><strong>Carlos Estrada</strong></button>
+        <button type="button" class="testimonial-person" data-testimonial="1"><span>MR</span><strong>María Rojas</strong></button>
+        <button type="button" class="testimonial-person" data-testimonial="2"><span>JL</span><strong>José Luna</strong></button>
+        <button type="button" class="testimonial-person" data-testimonial="3"><span>AP</span><strong>Ana Paredes</strong></button>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-banner">
     <div class="cta-banner__bg">
@@ -455,6 +480,7 @@
         <img class="contact__map" src="https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/bc291.png" alt="Map location" />
       </div>
       <form class="contact-form" id="contact-form">
+        <h3>Contact</h3>
         <div class="contact-form__fields">
           <label>
             <span>Name</span>
@@ -464,15 +490,20 @@
             <span>Email</span>
             <input type="email" name="email" required placeholder="your@email.com" />
           </label>
+          <label>
+            <span>Phone</span>
+            <input type="tel" name="phone" placeholder="Your phone" />
+          </label>
+          <label>
+            <span>Subject</span>
+            <input type="text" name="subject" placeholder="How can we help?" />
+          </label>
           <label class="contact-form__full">
-            <span>Message</span>
-            <textarea name="message" rows="5" required placeholder="How can we help?"></textarea>
+            <span>Tell us what you are interested in</span>
+            <textarea name="message" rows="5" required placeholder="Write your message"></textarea>
           </label>
           <button type="submit" class="btn btn--primary">
-            <span>Send message</span>
-            <span class="btn__icon btn__icon--dark">
-              <img src="https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/6f5c9.svg" alt="" />
-            </span>
+            <span>Send to us</span>
           </button>
         </div>
       </form>
@@ -487,41 +518,37 @@
           <img src="https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/41d65.png" alt="MUYU" />
         </a>
         <p class="site-footer__tagline">Connecting farm work with verified progress — Escrow, GPS evidence and milestones for agricultural production.</p>
-        <div class="site-footer__social">
-          <a href="#" aria-label="LinkedIn">in</a>
-          <a href="#" aria-label="X">X</a>
-          <a href="#" aria-label="Instagram">Ig</a>
-        </div>
+        <p class="site-footer__credit">A product by AllpaTech.</p>
       </div>
 
       <nav class="site-footer__nav" aria-label="Footer">
         <div class="site-footer__col">
-          <h3>Platform</h3>
-          <ul>
-            <li><a href="#features">Core features</a></li>
-            <li><a href="#plans">Production plans</a></li>
-            <li><a href="#how-it-works">How it works</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="site-footer__col">
-          <h3>Company</h3>
+          <h3>Product</h3>
           <ul>
             <li><a href="#about">About Muyu</a></li>
-            <li><a href="#testimonials">Press</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="mailto:allpatech@email.com">allpatech@email.com</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#features">Core features</a></li>
+            <li><a href="#plans">Production plans</a></li>
+            <li><a href="#payments">Pricing</a></li>
           </ul>
         </div>
         <div class="site-footer__col">
-          <h3>Get the app</h3>
-          <p class="site-footer__col-text">Track milestones and field evidence from anywhere.</p>
-          <a href="#home" class="btn btn--primary site-footer__cta">
-            <span>Download the app</span>
-            <span class="btn__icon btn__icon--dark">
-              <img src="https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/6f5c9.svg" alt="" />
-            </span>
-          </a>
+          <h3>For users</h3>
+          <ul>
+            <li><a href="#audience">For farmers</a></li>
+            <li><a href="#audience">For merchants</a></li>
+            <li><a href="#features">Information</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="site-footer__col">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="#">Terms and Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><button type="button" class="footer-language" id="footer-language">EN | ES</button></li>
+          </ul>
         </div>
       </nav>
     </div>
@@ -530,9 +557,9 @@
       <div class="container site-footer__bar-inner">
         <p>&copy; 2026 Muyu · AllpaTech. All rights reserved.</p>
         <div class="site-footer__legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Cookies</a>
+          <a href="#faq">FAQ</a>
+          <a href="#">Term of Service</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
     </div>
