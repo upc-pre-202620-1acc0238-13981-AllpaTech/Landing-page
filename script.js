@@ -133,7 +133,7 @@
   const testimonials = [
     {
       name: "Carlos Estrada",
-      image: "https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/f11b7.png",
+      image: "assets/f11b7.png",
       role: { en: "20 years of experience", es: "20 años de experiencia" },
       quote: {
         en: "“We improve the interaction between the merchant and the farmer. Thanks to the app, I gained a valuable tool for working safely and reliably, with the confidence to build a long-term business relationship.”",
@@ -142,7 +142,7 @@
     },
     {
       name: "María Rojas",
-      image: "https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/f1bf1.png",
+      image: "assets/f1bf1.png",
       role: { en: "Quinoa producer", es: "Productora de quinua" },
       quote: {
         en: "“Now every activity in my field is recorded clearly. I can send evidence even without signal and know exactly when each milestone is approved.”",
@@ -151,7 +151,7 @@
     },
     {
       name: "José Luna",
-      image: "https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/1108c.png",
+      image: "assets/1108c.png",
       role: { en: "Agricultural merchant", es: "Comerciante agrícola" },
       quote: {
         en: "“Muyu gives me the context I need before approving a payment. Photos, location and time make production progress easier to verify.”",
@@ -160,7 +160,7 @@
     },
     {
       name: "Ana Paredes",
-      image: "https://www.figma.com/api/mcp/asset/9ccd42f9-265d-418e-b684-31c6145f5aaf/20136.png",
+      image: "assets/20136.png",
       role: { en: "Corn producer", es: "Productora de maíz" },
       quote: {
         en: "“The milestone plan helps us organize the season and demonstrate the work completed. Payments are clearer for everyone involved.”",
