@@ -30,8 +30,23 @@
           <li><a href="#payments">Payments</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <button type="button" class="language-toggle" id="language-toggle" aria-label="Cambiar idioma a español">ES</button>
         <a href="#contact" class="btn btn--outline-white">Contact Us</a>
+        <div class="language-selector" id="language-selector">
+          <button type="button" class="language-toggle" id="language-toggle" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-menu">
+            <img class="language-flag" src="assets/eeuu.png" alt="" />
+            <img class="language-chevron" src="assets/Vector.png" alt="" />
+          </button>
+          <div class="language-menu" id="language-menu" role="menu" hidden>
+            <button type="button" class="language-option" role="menuitem" data-language="en">
+              <img class="language-flag" src="assets/eeuu.png" alt="" />
+              <span>English</span>
+            </button>
+            <button type="button" class="language-option" role="menuitem" data-language="es">
+              <img class="language-flag" src="assets/peru.png" alt="" />
+              <span>Español</span>
+            </button>
+          </div>
+        </div>
         <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
