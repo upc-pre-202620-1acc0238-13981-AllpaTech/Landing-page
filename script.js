@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  /* Mobile navigation */
+
   const headerNav = document.querySelector(".header-nav");
   const navToggle = document.querySelector(".nav-toggle");
 
@@ -19,7 +19,7 @@
     });
   }
 
-  /* Features accordion — one open at a time; 02 (GPS) open by default per Figma */
+
   const featuresAccordion = document.getElementById("features-accordion");
 
   if (featuresAccordion) {
@@ -198,6 +198,9 @@
 
   /* English / Spanish language switch */
   const languageToggle = document.getElementById("language-toggle");
+  const languageSelector = document.getElementById("language-selector");
+  const languageMenu = document.getElementById("language-menu");
+  const languageOptions = document.querySelectorAll(".language-option");
   const translations = {
     "Home": "Inicio", "About Muyu": "Sobre Muyu", "Testimonials": "Testimonios", "Plans": "Planes", "Payments": "Pagos", "Contact": "Contacto", "Contact Us": "Contáctanos",
     "Connecting farm": "Conectando el trabajo", "work with verified": "agrícola con progreso", "progress.": "verificado.",
@@ -235,14 +238,24 @@
   }
 
   function setLanguage(language) {
-    if (language === currentLanguage) return;
+    if (language === currentLanguage) {
+      if (languageMenu) languageMenu.hidden = true;
+      languageToggle?.setAttribute("aria-expanded", "false");
+      return;
+    }
     translateTextNodes(language === "es" ? translations : reverseTranslations);
     currentLanguage = language;
     document.documentElement.lang = language;
     if (languageToggle) {
-      languageToggle.textContent = language === "en" ? "ES" : "EN";
-      languageToggle.setAttribute("aria-label", language === "en" ? "Cambiar idioma a español" : "Switch language to English");
+      const flag = languageToggle.querySelector(".language-flag");
+      if (flag) flag.src = language === "en" ? "assets/eeuu.png" : "assets/peru.png";
+      languageToggle.setAttribute("aria-label", language === "en" ? "Select language, current language: English" : "Seleccionar idioma, idioma actual: español");
     }
+    languageOptions.forEach((option) => {
+      option.setAttribute("aria-checked", String(option.dataset.language === language));
+    });
+    if (languageMenu) languageMenu.hidden = true;
+    languageToggle?.setAttribute("aria-expanded", "false");
     document.querySelector('[name="name"]')?.setAttribute("placeholder", language === "es" ? "Tu nombre" : "Your name");
     document.querySelector('[name="phone"]')?.setAttribute("placeholder", language === "es" ? "Tu teléfono" : "Your phone");
     document.querySelector('[name="subject"]')?.setAttribute("placeholder", language === "es" ? "¿Cómo podemos ayudarte?" : "How can we help?");
@@ -250,8 +263,34 @@
     renderTestimonial(activeTestimonial);
   }
 
-  languageToggle?.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "es" : "en"));
+  languageToggle?.addEventListener("click", () => {
+    const open = languageToggle.getAttribute("aria-expanded") !== "true";
+    languageToggle.setAttribute("aria-expanded", String(open));
+    if (languageMenu) languageMenu.hidden = !open;
+  });
+  languageOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      const language = option.dataset.language;
+      if (language === "en" || language === "es") setLanguage(language);
+    });
+  });
+  document.addEventListener("click", (event) => {
+    if (languageSelector && !languageSelector.contains(event.target)) {
+      if (languageMenu) languageMenu.hidden = true;
+      languageToggle?.setAttribute("aria-expanded", "false");
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && languageToggle?.getAttribute("aria-expanded") === "true") {
+      if (languageMenu) languageMenu.hidden = true;
+      languageToggle.setAttribute("aria-expanded", "false");
+      languageToggle.focus();
+    }
+  });
   document.getElementById("footer-language")?.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "es" : "en"));
+  languageOptions.forEach((option) => {
+    option.setAttribute("aria-checked", String(option.dataset.language === currentLanguage));
+  });
 
   /* Smooth offset for fixed feel — anchor links */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
