@@ -202,6 +202,8 @@
   const languageMenu = document.getElementById("language-menu");
   const languageOptions = document.querySelectorAll(".language-option");
   const translations = {
+    "About the product": "Sobre el producto", "Discover Muyu in one minute": "Conoce Muyu en un minuto",
+    "A short tour of how Muyu connects farmers and merchants through milestones, field evidence and funds protected in Escrow.": "Un recorrido breve por cómo Muyu conecta a agricultores y comerciantes mediante hitos, evidencias de campo y fondos protegidos en Escrow.",
     "Team": "Equipo", "About the team": "Sobre el equipo", "Meet the AllpaTech team": "Conoce al equipo de AllpaTech",
     "See how we interviewed farmers and merchants, designed Muyu and built it together as a team.": "Mira cómo entrevistamos a agricultores y comerciantes, diseñamos Muyu y lo construimos juntos como equipo.",
     "Home": "Inicio", "About Muyu": "Sobre Muyu", "Testimonials": "Testimonios", "Plans": "Planes", "Payments": "Pagos", "Contact": "Contacto", "Contact Us": "Contáctanos",

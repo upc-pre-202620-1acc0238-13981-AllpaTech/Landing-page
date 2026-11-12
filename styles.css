@@ -1381,7 +1381,9 @@ ul {
 }
 
 /* Responsive */
-/* About the team video */
+/* About the product and About the team videos */
+.product-video { background: var(--bg-alt); }
+
 .team-video__frame {
   position: relative;
   width: 100%;
