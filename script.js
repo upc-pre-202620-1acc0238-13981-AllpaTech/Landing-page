@@ -202,6 +202,8 @@
   const languageMenu = document.getElementById("language-menu");
   const languageOptions = document.querySelectorAll(".language-option");
   const translations = {
+    "Team": "Equipo", "About the team": "Sobre el equipo", "Meet the AllpaTech team": "Conoce al equipo de AllpaTech",
+    "See how we interviewed farmers and merchants, designed Muyu and built it together as a team.": "Mira cómo entrevistamos a agricultores y comerciantes, diseñamos Muyu y lo construimos juntos como equipo.",
     "Home": "Inicio", "About Muyu": "Sobre Muyu", "Testimonials": "Testimonios", "Plans": "Planes", "Payments": "Pagos", "Contact": "Contacto", "Contact Us": "Contáctanos",
     "Connecting farm": "Conectando el trabajo", "work with verified": "agrícola con progreso", "progress.": "verificado.",
     "Muyu connects farmers and merchants through milestone-based production agreements. Funds remain in Escrow and are released as field progress is verified with GPS and timestamped evidence.": "Muyu conecta a agricultores y comerciantes mediante acuerdos de producción basados en hitos. Los fondos permanecen en Escrow y se liberan cuando el avance en campo se verifica con GPS y evidencias con fecha y hora.",
