@@ -1381,6 +1381,25 @@ ul {
 }
 
 /* Responsive */
+/* About the team video */
+.team-video__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 32px;
+  background: var(--black);
+  box-shadow: 0 24px 48px rgba(16, 24, 40, 0.16);
+}
+
+.team-video__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 @media (max-width: 1200px) {
   :root {
     --gutter: 48px;
@@ -1567,6 +1586,8 @@ ul {
 }
 
 @media (max-width: 600px) {
+  .team-video__frame { border-radius: 16px; }
+
   :root {
     --gutter: 24px;
   }
